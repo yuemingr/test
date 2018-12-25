@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+  <title>css</title>
+  <link rel="sytlesheet" type="text/css" href="mystyle.css" />
+  <style>
+    body {background-color:#b0c4de;}
+  </style>
+</head>
+<body>
+<div id="content">
+  背景属性
+  <ul>
+    <li>background:#fff url('img_tree.png') no-repeat right top;</li>
+	<li>background-attachment:fiexd; 固定背景</li>
+	<li>background-color:#ccddee;</li>
+	<li>background-image:url('img_tree.png');</li>
+	<li>background-position:100px 200px;</li>
+	<li>background-repead:no-repead;  //repeat-x;repeat-y;</li>
+  </ul>
+  文本
+  <ul>
+    <li>color:#00ff00;//文本颜色</li>
+    <li>text-align:center;//文本对齐 right,left,justify</li>
+    <li>text-decoration:none;//文本修饰 overline,line-through,underline</li>
+    <li>text-transform:uppercase;//文本转换，lowercase,capitalize</li>
+    <li>text-index:50px;//文本缩进</li>
+  </ul>
+  字体
+  <ul>
+    <li>font-family:"times New Roman", Times, serif; //字体系列</li>
+    <li>font-style:normal;//字体样式，italic,oblique;</li>
+    <li>font-size:40px;//字体大小</li>
+    <li>font-size:100%</li>
+    <li>font-size:1em;</li>
+    <li>font-variant</li>
+    <li>font-weight:500</li>
+  </ul>
+  链接样式
+  <style>
+    ul.a{list-style-type:circle}
+	ul.b{list-style-type:square;}
+  </style>
+  <ul class="a">
+    <li>a:link{color:#00ccff;}</li>
+    <li>a:visited{color:#00ffcc;}</li>
+    <li>a:hover{color:#ff00cc;}</li>
+    <li>a:active{color:#0000ff;}</li>
+  </ul>
+  列表
+  <ul class="b">
+    <li>ul.a{list-style-type:circle;}</li>
+	<li>ul.b{list-style-type:square;}</li>
+	<li>list-style-image:url("sqpurple.gif");</li>
+  </ul>
+  表格
+  <ul>
+    <li>border:1px solid block; //表格边框</li>
+	<li>border-collapse:collapse; //折叠边框</li>
+	<li>width:100%;</li>
+	<li>height:50px;</li>
+	<li>text-align:right;</li>
+	<li>vertical-align:bottom;</li>
+	<li>padding:15px</li>
+	<li>background-color:green;</li>
+	<li>color:white;</li>
+  </ul>
+  盒子模型
+  <ul>
+    <li>Margin - Border - Padding - Content </li>
+	<li>总元素的宽度 = 宽度 + 左填充 + 右填充 + 左边框 + 右边框 + 左边距 + 右边距</li>
+  <ul>
+  边框
+  <ul>
+    <li>border-style:solid;边框样式 dotted,dashaed;solid;double;groove;ridge;inset;outset;
+    <li>border-width:5px;</li>
+	<li>border-color:#00ccff;</li>
+	<li>border-top-style:dotted;border-right-style:solid;border-bottom-style:dotted;border-left-style:solid;边框单独设置</li>
+  </ul>
+  轮廓
+  <ul>
+    <li>outline</li>
+  </ul>
+  外边距
+  <ul>
+    <li>margin-top:100px;maring-bottom;margin-right;margin-left;</li>
+  </ul>
+  内边距
+  <ul>
+	<li>padding-top:100px;padding-bottom;padding-left;padding-right;</li>
+  </ul>
+  分组和嵌套 选择器
+  <ul>
+    <li> h1,h2,p{color:green;} //分组选择器</li>
+	<li>p{} .marked{} .marked p{} p.marked{} //嵌套选择</li>
+  </ul>
+  尺寸
+  <ul>
+    <li>height:10px;</li>
+    <li>line-height:10px;</li>
+    <li>max-height:10px;</li>
+	<li>max-width:10px;</li>
+	<li>min-height:10px;</li>
+	<li>min-width:10px;</li>
+	<li>width:20px;</li>
+  </ul>
+  Dispaly显示 与 Visibility可见性
+  <ul>
+    <li>visibility:hidden;隐藏元素，仍然占空间</li>
+    <li>display:none;隐藏元素，不占布局空间</li>
+    <li>dispaly:inline;内联元素</li>
+    <li>display:block;块元素</li>
+  </ul>
+  Position 定位
+  <ul>
+    <li>position:static;默认值，没有定位，元素出现在正常的流中</li>
+    <li>position:fixed;固定位置</li>
+    <li>position:relative;相对定位</li>
+    <li>position:absolute;绝对定位</li>
+    <li>position:-webkit-sticky;/* Safari */ position:sticky; 粘性定位</li>
+	<li>position:absolute;left:0;top:0;z-index:-1;//重叠的元素，z-index堆叠顺序</li>
+  </ul>
+  对齐
+  <ul>
+    <li>垂直居中
+      <pre>
+        .center{height:200px;position:relative;border:3px solid green;}
+		.center p{margin:0;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
+      </pre>
+	</li>
+  </ul>
+  组合选择符
+  <ul>
+    <li>后代选择器 空格分隔 div p{}</li>
+    <li>子选择器 大于号分隔 div>p{}</li>
+    <li>相邻兄弟选择器 加号分隔 div+p{}</li>
+	<li>普通兄弟选择器 破折号分隔 div~p{}</li>
+  </ul>
+  伪类
+  <ul>
+    <li>a.red:visited</li>
+    <li>:first-child   p:first-child{} p>i:first-child{} p:first-child i{} </li>
+  </ul>
+  属性选择器
+  <ul>
+    <li>[title=runoob]{}</li>
+  </ul>
+  
+</div>
+<body>
+</html>
