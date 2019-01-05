@@ -31,7 +31,7 @@ public class GreetingServer extends Thread
 				outB.println("HTTP/1.1 200 OK");
 				outB.println("Content-Type:text/html;charset:GBK");
 				outB.println();
-				outB.println("ooocc");
+				outB.println("<html><head><title>java socket test</title></head><body> <h1>java socket</h1> <br/> oookk<br/></body></html>");
 				
 				server.close();
 			}catch(SocketTimeoutException s)
