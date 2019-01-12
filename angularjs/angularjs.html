@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <mata charset="utf-8">
+	<script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-app="myApp" ng-controller="personCtrl">
+	  <button ng-click="toggle()">H/S</button>
+	  <p ng-hide="myVar">
+	    ming:<input type="text" ng-model="fn"><br>
+		xing:<input type="text" ng-model="ln"><br>
+		full:{{fn + "  " + ln}}
+	  </p>
+	</div>
+	<script>
+	  var app = angular.module('myApp', []);
+	  app.controller('personCtrl', function($scope){
+	    $scope.fn = "john";
+		$scope.ln = "Doe";
+		$scope.myVar = false;
+		$scope.toggle = function(){
+		  $scope.myVar = !$scope.myVar;
+		};
+		
+	  });
+    </script>
+  </body>
+</html>
+	
