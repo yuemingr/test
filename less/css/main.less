@@ -36,3 +36,72 @@ body{
 .myclass2{
 	color:#FF0000;
 }
+
+//混合
+.p3{
+	background: #DAA520;
+	.p1;
+}
+.p1{
+	color:red;
+}
+.p2{
+	background:#334455;
+	.p1;
+}
+
+//参数混合
+.border(@width;@style;@color){
+	border:@width @style @color;
+}
+
+.myheader{
+	.border(2px;dashed;green);
+}
+
+//Minxin范围
+.Minxin(){
+	@bgcolor:#c0c0c0;
+}
+.myclass{
+	.Minxin();
+	background-color:@bgcolor;
+}
+
+//匹配模式
+.pos(r){
+	position:relative;
+}
+.pos(a){
+	position:absolute;
+}
+.pos(f){
+	position:fixed;
+}
+
+.pipei{
+	width:200px;
+	height:200px;
+	background-color:green;
+	.pos(f);
+}
+
+
+//匹配模式里的运算
+@test_01:300px;
+.box_02{
+	width:(@test_01 - 1)*5;
+}
+
+//嵌套
+.list{
+	width:600px;
+	list-style:none;
+	
+	li{
+		height:20px;
+		line-height:20px;
+		
+		a{}
+	}
+}

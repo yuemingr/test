@@ -22,3 +22,37 @@ body {
 .myclass2 {
   color: #FF0000;
 }
+.p3 {
+  background: #DAA520;
+  color: red;
+}
+.p1 {
+  color: red;
+}
+.p2 {
+  background: #334455;
+  color: red;
+}
+.myheader {
+  border: 2px dashed #008000;
+}
+.myclass {
+  background-color: #c0c0c0;
+}
+.pipei {
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  position: fixed;
+}
+.box_02 {
+  width: 1495px;
+}
+.list {
+  width: 600px;
+  list-style: none;
+}
+.list li {
+  height: 20px;
+  line-height: 20px;
+}
