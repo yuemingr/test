@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <script src='js/echarts.js'></script>
+</head>
+<body>
+  <div id="main" style="width:600px;height:400px;"></div>
+  <div id="ndge" note="南丁格尔图" style="widht:300px;height:200px;"></div>
+  <script>
+    var myChart = echarts.init(document.getElementById("main"));
+    var option = {
+        title:{
+	    text:'Echarts 入门实例'
+	},
+	tooltip:{},
+	legend:{
+	    data:['销量']
+	},
+	xAxis:{
+	    data:["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+	},
+	yAxis:{},
+	series:[{
+	    name:'cccd',
+	    type:'bar'
+	}]
+	/*series:[{
+	    name:'销量',
+	    type:'bar',
+	    data:[5,20,36,10,10,20]
+	}]*/
+    };
+    myChart.setOption(option);
+    var symbolSize = 20;
+    var data = [[15,0],[-50,10],[-56.5,20],[-46.5,30],[-22.1,40]];
+    option = {
+        xAxis:{
+	    min:-100,
+	    max:80,
+            type:'value',
+	    axisLine:{onZero:false}
+	},
+	yAxis:{
+	    min:-30,
+            max:60,
+	    type:'value',
+	},
+	series:[
+	    {
+	        id: 'a',
+		type:'line',
+		smooth:true,
+		symbolSize:symbolSize,
+		data:data
+	    }
+	],
+	
+    };
+    myChart.setOption(option);
+
+    myChart.setOption({
+        graphic:echarts.util.map(data,function (dataItem, dataIndex) {
+	    return {
+	        type:'circle',
+		shape:{
+		    r:symbolSize / 2
+		},
+		position:myChart.convertToPixel('grid', dataItem),
+		invisible:true,
+		draggable:true,
+		z:100,
+		ondrag:echarts.util.curry(onPointDragging, dataIndex)
+	    };
+	}),
+    });
+
+    function onPointDragging(dataIndex) {
+	console.log("opding: dataIndex:" + dataIndex);
+        data[dataIndex] = myChart.convertFromPixel('grid', this.position);
+	myChart.setOption({
+	    series:[{
+	        id:'a',
+		data:data
+	    }]
+	});
+    }
+  </script>
+</body>
+</html>
+

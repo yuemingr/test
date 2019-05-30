@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <script src='js/echarts.js'></script>
+</head>
+<body>
+  <div id="main" style="width:600px;height:400px;"></div>
+  <div id="ndge" note="南丁格尔图" style="widht:300px;height:200px;"></div>
+  <script>
+    var myChart = echarts.init(document.getElementById("main"));
+    var option = {
+        title:{
+	    text:'Echarts 入门实例'
+	},
+	tooltip:{},
+	legend:{
+	    data:['销量']
+	},
+	xAxis:{
+	    data:["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+	},
+	yAxis:{},
+	series:[{
+	    name:'cccd',
+	    type:'bar'
+	}]
+	/*series:[{
+	    name:'销量',
+	    type:'bar',
+	    data:[5,20,36,10,10,20]
+	}]*/
+    };
+    myChart.setOption(option);
+    option = {
+        xAxis:{type:'value'},
+	yAxis:{type:'value'},
+	dataZoom:[
+	    {
+                type:'slider',
+		start:20,
+		end:90
+             },
+	    {
+                type:'inside',
+		start:20,
+		end:90
+             },
+	    {
+                type:'slider',
+		yAxisIndex:0,
+		start:20,
+		end:90
+             },
+	],
+	    series:[{
+	        type:'line',
+		itemStule:{
+		    opacity:0.8
+		},
+		symbolSize:function(val) {
+		    return val[2] * 40;
+		},
+                data: [["14.616","7.241","0.896"],["3.958","5.701","0.955"],["2.768","8.971","0.669"],["9.051","9.710","0.171"],["14.046","4.182","0.536"],["12.295","1.429","0.962"],["4.417","8.167","0.113"],["0.492","4.771","0.785"],["7.632","2.605","0.645"],["14.242","5.042","0.368"]]
+	    }]
+    };
+    myChart.setOption(option);
+  </script>
+</body>
+</html>
+

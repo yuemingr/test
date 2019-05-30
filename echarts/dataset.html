@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <script src='js/echarts.js'></script>
+</head>
+<body>
+  <div id="main" style="width:600px;height:400px;"></div>
+  <div id="ndge" note="南丁格尔图" style="widht:300px;height:200px;"></div>
+  <script>
+    var myChart = echarts.init(document.getElementById("main"));
+    var option = {
+        title:{
+	    text:'Echarts 入门实例'
+	},
+	tooltip:{},
+	legend:{
+	    data:['销量']
+	},
+	xAxis:{
+	    data:["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+	},
+	yAxis:{},
+	series:[{
+	    name:'cccd',
+	    type:'bar'
+	}]
+	/*series:[{
+	    name:'销量',
+	    type:'bar',
+	    data:[5,20,36,10,10,20]
+	}]*/
+    };
+    myChart.setOption(option);
+
+    option = {
+        legend:{},
+	toopltip:{},
+	dataset:{
+	    source:[
+	        ['product','2015','2016','2017'],
+		['Matcha Latte',43.3, 858, 93.7],
+		['Milk Tea', 83.1, 73.4, 55.1],
+		['Cheese Cocoa', 86.4, 65.2, 82.5],
+		['Walnut Brownie', 72.4, 53.9, 39.1]
+	    ]
+	},
+	xAxis:{type:'category'},
+	yAxis:{},
+	series: [
+            {type:'bar'},
+            {type:'bar'},
+	    {type:'bar'}
+	]
+    };
+
+    option = {
+        legend:{},
+	tooltip:{},
+	dataset:{
+	    source:[
+	        ['product', '2012', '2013', '2014','2015'],
+		['Matcha Latte', 41.1, 30.4, 65.1, 53,3],
+		['Milk Tea', 86.5, 92.1, 85.7, 83.1],
+		['Cheese Cocoa', 24.1, 67.2, 79.5, 86.4]
+	    ]
+	},
+	xAxis:[
+	    {type: 'category', gridIndex:0},
+            {type: 'category', gridIndex:1}
+	],
+	yAxis: [
+	    {gridIndex: 0},
+            {gridIndex: 1}
+	],
+	grid: [
+	    {bottom: '55%'},
+	    {top: '75%'}
+	],
+	series: [
+            {type: 'bar',seriesLayoutBy: 'row'},
+            {type: 'bar',seriesLayoutBy: 'row'},
+            {type: 'bar',seriesLayoutBy: 'row'},
+	    {type: 'bar',xAxisIndex:1, yAxisIndex:1},
+	    {type: 'bar',xAxisIndex:1, yAxisIndex:1},
+	    {type: 'bar',xAxisIndex:1, yAxisIndex:1},
+	]
+    };
+    myChart.setOption(option,true);
+  </script>
+</body>
+</html>
+

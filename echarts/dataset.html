@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <script src='js/echarts.js'></script>
+</head>
+<body>
+  <div id="main" style="width:600px;height:400px;"></div>
+  <div id="ndge" note="南丁格尔图" style="widht:300px;height:200px;"></div>
+  <script>
+    var myChart = echarts.init(document.getElementById("main"));
+    var option = {
+        title:{
+	    text:'Echarts 入门实例'
+	},
+	tooltip:{},
+	legend:{
+	    data:['销量']
+	},
+	xAxis:{
+	    data:["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+	},
+	yAxis:{},
+	series:[{
+	    name:'cccd',
+	    type:'bar'
+	}]
+	/*series:[{
+	    name:'销量',
+	    type:'bar',
+	    data:[5,20,36,10,10,20]
+	}]*/
+    };
+    myChart.setOption(option);
+
+    /* 模拟异步加载 */
+    function fetchDate(cb) {
+	myChart.showLoading();
+        setTimeout(function() {
+	    console.log("ook");
+	    cb({
+	        categories:["衬衫1","羊毛衫1","雪纺衫","裤子","高跟鞋"],
+		data:[5,20,36,10,10,20]
+	    });
+            myChart.hideLoading();
+	}, 3330);
+    }
+    fetchDate(function(data){
+        myChart.setOption({
+	    xAxis:{
+	        data:data.categories
+	    },
+	    series:[{
+		name:"销量",
+                data:data.data
+	    }]
+	});
+    });
+    var myChart1 = echarts.init(document.getElementById("ndge"));
+    myChart1.setOption({
+        series:[
+	    {
+	        name:'访问来源',
+		type:'pie',
+		radius:'55%',
+		data:[
+		    {value:235, name:'视频广告'},
+		    {value:274, name:'联盟广告'},
+		    {value:310, name:'邮件营销'},
+		    {value:335, name:'直接访问'},
+		    {value:400, name:'搜索引擎'}
+		]
+	    }
+	]
+    });
+    
+  </script>
+</body>
+</html>
+ 
