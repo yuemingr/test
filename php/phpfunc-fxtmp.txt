@@ -1,0 +1,169 @@
+ 
+进一取整 ceil
+
+//舍去法取整
+ecb(floor(2.9));
+
+//返回数的n次方
+ecb(pow(3,2));
+
+//更好的随机数
+ecb(mt_rand(1,100));
+
+//随机数
+ecb(rand(1,100));
+
+//把字符串填充为指定的长度
+ecb(str_pad("cccc",20,"-"));
+
+//number_format(); //格式化数字
+ecb(number_format(239111.23));
+ecb(number_format(2323221.1,4));
+ecb(number_format(19200101.20,3,"-","*"));
+
+//字符串转为小写
+ecb(strtolower("ABCddd"));
+echo ucfirst("hello world"); //字符串首字符大写
+echo ucwords("hello world"); //字符串全部大写
+
+echo htmlentities("John & ’Admas'"); //把字符转为html实体字符
+//htmlspecialchars(); //预定义字符转html编码
+echo nl2br("One line.\nAnother line."); // \n转义为<br>
+echo addcslashes($str, 'm');//在指定的字符前添加反作斜线转义字符串 
+echo stripcslashes("Hello, \my na\me is Kai ji\m"); //删除由addcslashes()添加的反斜线
+echo addslashes("who's John Adams?"); //在预定义字符前添加反斜线
+echo stripslashes("Who\'s John Adams?"); //删除由addslashes()添加的反斜线
+echo quotemeta("Hello world. (can you hear me?)"); //在字符串中某些预定义的字符前添加反斜线
+//从指定的ASII值返回字符
+ecb(chr(44));
+//返回字符串第一个字符的ASII值
+ecb(ord("abc"));
+echo strcasecmp("Hello world","HELLO WORLd"); //不区分大小比较两个字符串
+//chunk_split(); //将字符串分成小块
+//strtok(); //切开字符串
+
+explode(); //使用一个字符串为标志分割另一个字符串
+
+//implode(); //将数组用一个预定字符连接成字符串，同join
+//substr(); //截取字符串
+
+//字符串替换，区分大小写
+ecb(str_replace("aa","bb","aa000000"));
+
+//字符串替换，不区分大小写
+ecb(str_ireplace("Aa","dd","aa1111")); 
+//substr_count(); //统计一个字符串在另一个字符串中出现的次数
+
+
+//substr_replace(); //替换字符串中某串为另一个字答串
+
+//substr_replace(); //替换字符串中某串为另一个字答串
+//similar_text(); //返回两字符串相同字符的数量
+
+//strrchr(); //返回一个字符串在另一个字符串中最后一次出现的位置开始到末尾的字符串
+//strstr(); //返回一个字符串在另一个字符串中首次出现的位置开始到末尾的字符串
+//strchr(); strstr()的别名
+
+//stristr(); //返回一个字符串在另一个字符串中开始位置到结束的字符串，不区分大小写
+//strtr(); //替换字符串中的某些字符
+
+//strspn(); //返回字符串中首次符合mask的子字符长度
+//str_word_count(); //统计字
+
+//str_word_count(); //统计字符串含有的单词数
+//strlen(); //统计字符串长度
+//count_chars(); //统计字符串中所有字母出现的次数
+
+//生成一个数组，用一个数组的值作为键名，另一个数组作为值
+$a1 = array("cat",'dog','horse');
+$a2 = array(1,2,3);
+print_r(array_combine($a1,$a2);
+
+//compact(); //创建一个由参数所带变量组成的数组
+
+//用给定值填充数组
+$a = array_fill(1,3,"dd");
+
+//array_chunk();//把一个数组分割为新的数组块
+
+//把两个或多个数组合并为一个数组
+$a = array("a"=>12,"b"=>33,"c"=>33);
+$b = array("c" => 55,"d"=>88,"e"=>33);
+ecb(array_merge($a,$b));
+
+print_r(array_slice($a1,1,2)); //根据条件取出数组的一部分
+
+//array_diff(); //返回两个数组的差集数组
+//array_intersect(); //返回两个或多个数组的交集
+
+//array_search(); //在数组中查找一个值，返回一个键，没有返回假
+//array_splice(); //把数组中的一部分删除由其他值代替
+//array_sum(); //返回数组中所有值的总和
+//in_array(); //在数组中搜索给定的值，区分大小写
+//array_key_exists(); //判断数组中是否存在某个键名
+//key(); //返回数组内部指针当前指向的键名
+//current(); //返回数组中的当前元素
+//next(); //内部指针移动下一元素，并返回当前元素
+//prev(); //内部指针移动到上一元素，并返回当前元素
+//end(); //指针指向最后一个元素，并返回该元素
+//reset(); //指针指向第一个元素，并返回这个元素
+//list(); //用数组中的元素为一组变量赋值
+$a = array("dog","cat","horse");
+list($a,$b,$c) = $a;
+//array_shift(); //删除数组中的第一个元素，并返回此删除的元素
+//array_unshift(); //在数组开头插入一个或多个元素
+//array_push(); //向数组末尾压入一个或多个元素
+//array_pop(); //取得（删除）数组中的最后一个元素
+//shuffle(); //将数组打乱，保留键名
+//count(); //计算数组中单元数目或对象中的属性个数
+//array_flip(); //返回一个键值反转后的数组
+//array_keys(); //返回所有数组的键组成一个数组
+//array_values(); //返回所有数组的值组成一个数组
+//array_reverse(); //返回一个元素顺序相反的数组，键名键值依然匹配
+//array_count_values();// 统计数组中所有的值出现的次数
+//array_rand(); //从数组中随机抽取一个或多个元素，注意是键名
+//each();// 返回数组中当前的键/值对并向前移动数组指针
+//array_unique(); //删除重复值，返回剩余数组
+//sort(); //按升序对数组进行排序不保留键名
+//rsort(); //对数组逆向排序，不保留键名
+//asort(); //对数组排序，保持索引关系
+//arsort(); //对数组逆向排序，保持索引关系
+//ksort(); //按键名对数组排序
+//krsort(); //按键名逆向排序
+//natsort(); //用自然顺序算法对数组中的元素排序
+//natcasesort(); //自然排序，不区分大小写
+
+//文件系统函数
+//fopen(); //打开文件或者URL
+//array_key_exists(); //判断数组中是否存在某个键名
+//key(); //返回数组内部指针当前指向的键名
+//current(); //返回数组中的当前元素
+//next(); //内部指针移动下一元素，并返回当前元素
+//prev(); //内部指针移动到上一元素，并返回当前元素
+//end(); //指针指向最后一个元素，并返回该元素
+//reset(); //指针指向第一个元素，并返回这个元素
+//list(); //用数组中的元素为一组变量赋值
+$a = array("dog","cat","horse");
+list($a,$b,$c) = $a;
+//array_shift(); //删除数组中的第一个元素，并返回此删除的元素
+//array_unshift(); //在数组开头插入一个或多个元素
+//array_push(); //向数组末尾压入一个或多个元素
+//array_pop(); //取得（删除）数组中的最后一个元素
+//shuffle(); //将数组打乱，保留键名
+//count(); //计算数组中单元数目或对象中的属性个数
+//array_flip(); //返回一个键值反转后的数组
+//array_keys(); //返回所有数组的键组成一个数组
+//array_values(); //返回所有数组的值组成一个数组
+//array_reverse(); //返回一个元素顺序相反的数组，键名键值依然匹配
+//array_count_values();// 统计数组中所有的值出现的次数
+//array_rand(); //从数组中随机抽取一个或多个元素，注意是键名
+//each();// 返回数组中当前的键/值对并向前移动数组指针
+//array_unique(); //删除重复值，返回剩余数组
+//sort(); //按升序对数组进行排序不保留键名
+//rsort(); //对数组逆向排序，不保留键名
+//asort(); //对数组排序，保持索引关系
+//arsort(); //对数组逆向排序，保持索引关系
+//ksort(); //按键名对数组排序
+//krsort(); //按键名逆向排序
+//natsort(); //用自然顺序算法对数组中的元素排序
+//natcasesort(); //自然排序，不区分大小写
